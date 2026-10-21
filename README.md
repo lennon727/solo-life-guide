@@ -2,6 +2,18 @@
 
 微信小程序 v0.1 — A practical guide to food, products, and everyday tasks for people living alone.
 
+## English Introduction
+
+Solo Life Guide is an open-source WeChat mini program for people living alone. It offers meal ideas for one, practical appliance buying guides, and everyday checklists for tasks such as moving, renting, and preparing for travel.
+
+The project is at an early stage, with 0 GitHub stars and no published releases or monthly download statistics yet (as of October 21, 2026).
+
+Its value to the ecosystem lies in turning scattered information into searchable, actionable guidance. Recommendations explain who they suit, their limitations, and available alternatives. Built with native WeChat technologies and no third-party dependencies, the project provides an accessible starting point for independent developers and community contributors building tools for solo living.
+
+Repository: [Solo Life Guide](https://github.com/lennon727/solo-life-guide)
+
+## 中文介绍
+
 面向独居者的生活决策、消费推荐和办事指南。当前版本验证三个核心入口：
 
 - 一人食：分量、时间、保存和少浪费；
