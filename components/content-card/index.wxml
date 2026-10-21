@@ -1,0 +1,22 @@
+<view
+  wx:if="{{item}}"
+  class="content-card {{compact ? 'content-card--compact' : ''}}"
+  bindtap="openDetail"
+  hover-class="content-card--pressed"
+>
+  <view class="card-topline">
+    <text class="type-pill" style="color: {{item.typeMeta.color}}; background: {{item.typeMeta.softColor}};">
+      {{item.typeMeta.name}}
+    </text>
+    <text class="fit-score">适用度 {{item.fitScore}}</text>
+  </view>
+  <view class="card-title">{{item.title}}</view>
+  <view class="card-summary">{{item.summary}}</view>
+  <view class="tag-row">
+    <text wx:for="{{item.tags}}" wx:key="*this" class="tag">{{item}}</text>
+  </view>
+  <view class="card-footer">
+    <text>{{item.readMinutes}}分钟阅读</text>
+    <text class="read-more">查看建议 →</text>
+  </view>
+</view>

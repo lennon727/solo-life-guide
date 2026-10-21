@@ -1,0 +1,38 @@
+<view class="page-shell">
+  <view class="eyebrow">{{eyebrow}}</view>
+  <view class="page-title">{{title}}</view>
+  <view class="page-lead">{{lead}}</view>
+
+  <view class="search-box">
+    <text class="search-icon">⌕</text>
+    <input
+      class="search-input"
+      value="{{query}}"
+      placeholder="在本类内容中搜索"
+      placeholder-class="search-placeholder"
+      bindinput="onQueryInput"
+    />
+    <text wx:if="{{query}}" class="clear-button" bindtap="clearQuery">清除</text>
+  </view>
+
+  <scroll-view class="filter-scroll" scroll-x enhanced show-scrollbar="{{false}}">
+    <view class="filter-row">
+      <view
+        wx:for="{{tags}}"
+        wx:key="*this"
+        class="filter-chip {{activeTag === item ? 'filter-chip--active' : ''}}"
+        data-tag="{{item}}"
+        bindtap="selectTag"
+      >
+        {{item}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="result-meta">找到 {{visibleItems.length}} 条建议</view>
+  <content-card wx:for="{{visibleItems}}" wx:key="id" item="{{item}}" />
+
+  <view wx:if="{{!visibleItems.length}}" class="empty-state">
+    暂时没有匹配内容。换个关键词，或者回到“全部”看看。
+  </view>
+</view>

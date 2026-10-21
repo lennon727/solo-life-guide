@@ -1,0 +1,16 @@
+<view class="page-shell">
+  <view class="eyebrow">我的内容</view>
+  <view class="page-title">收藏与清单</view>
+  <view class="page-lead">收藏的建议保存在本机；详情页中的清单也会记住勾选状态。</view>
+
+  <view wx:if="{{favorites.length}}" class="saved-list">
+    <view class="result-meta">共 {{favorites.length}} 条收藏</view>
+    <content-card wx:for="{{favorites}}" wx:key="id" item="{{item}}" />
+  </view>
+
+  <view wx:else class="empty-state">
+    <view class="empty-title">还没有收藏</view>
+    <view class="empty-copy">看到有用的吃饭建议、选购指南或行动清单时，点进详情收藏它。</view>
+    <button class="home-button" bindtap="goHome">去首页看看</button>
+  </view>
+</view>

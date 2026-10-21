@@ -1,0 +1,59 @@
+page {
+  min-height: 100%;
+  background: #F7F4ED;
+  color: #20231F;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  font-size: 28rpx;
+}
+
+view,
+text,
+button,
+input {
+  box-sizing: border-box;
+}
+
+button::after {
+  border: 0;
+}
+
+.page-shell {
+  padding: 32rpx 28rpx 64rpx;
+}
+
+.eyebrow {
+  color: #1F5D50;
+  font-size: 22rpx;
+  font-weight: 700;
+  letter-spacing: 4rpx;
+}
+
+.page-title {
+  margin-top: 12rpx;
+  font-size: 48rpx;
+  font-weight: 800;
+  line-height: 1.22;
+}
+
+.page-lead {
+  margin-top: 14rpx;
+  color: #6D7069;
+  font-size: 27rpx;
+  line-height: 1.65;
+}
+
+.section-title {
+  margin: 48rpx 0 22rpx;
+  font-size: 32rpx;
+  font-weight: 750;
+}
+
+.empty-state {
+  margin-top: 36rpx;
+  padding: 72rpx 36rpx;
+  border-radius: 28rpx;
+  background: #FFFEFA;
+  color: #7A7D76;
+  text-align: center;
+  line-height: 1.7;
+}

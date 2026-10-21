@@ -1,0 +1,68 @@
+<view wx:if="{{item}}" class="detail-page">
+  <view class="detail-hero" style="background: {{item.typeMeta.softColor}};">
+    <view class="detail-meta" style="color: {{item.typeMeta.color}};">
+      {{item.typeMeta.name}} · {{item.readMinutes}}分钟阅读
+    </view>
+    <view class="detail-title">{{item.title}}</view>
+    <view class="detail-summary">{{item.summary}}</view>
+    <view class="score-line">
+      <view>
+        <view class="score-label">一人适用度</view>
+        <view class="score-value" style="color: {{item.typeMeta.color}};">{{item.fitScore}}</view>
+      </view>
+      <button class="favorite-button {{favorite ? 'favorite-button--active' : ''}}" bindtap="toggleFavorite">
+        {{favorite ? '已收藏' : '收藏'}}
+      </button>
+    </view>
+  </view>
+
+  <view class="detail-body">
+    <view class="verdict-card">
+      <view class="verdict-label">先说结论</view>
+      <view class="verdict-text">{{item.verdict}}</view>
+    </view>
+
+    <view class="fit-grid">
+      <view class="fit-box fit-box--yes">
+        <view class="fit-title">适合</view>
+        <view wx:for="{{item.bestFor}}" wx:key="*this" class="fit-line">{{item}}</view>
+      </view>
+      <view class="fit-box fit-box--no">
+        <view class="fit-title">不适合 / 注意</view>
+        <view wx:for="{{item.notFor}}" wx:key="*this" class="fit-line">{{item}}</view>
+      </view>
+    </view>
+
+    <view wx:for="{{item.sections}}" wx:key="title" class="content-section">
+      <view class="content-section-title">{{item.title}}</view>
+      <view wx:if="{{item.kind === 'text'}}" class="section-text">{{item.body}}</view>
+
+      <view wx:elif="{{item.kind === 'checklist'}}" class="checklist">
+        <view
+          wx:for="{{item.items}}"
+          wx:key="key"
+          wx:for-item="checkItem"
+          class="check-row {{checkItem.checked ? 'check-row--done' : ''}}"
+          data-key="{{checkItem.key}}"
+          bindtap="toggleCheck"
+        >
+          <view class="check-box">{{checkItem.checked ? '✓' : ''}}</view>
+          <view class="check-text">{{checkItem.text}}</view>
+        </view>
+      </view>
+
+      <view wx:else class="bullet-list">
+        <view wx:for="{{item.items}}" wx:key="key" wx:for-item="bulletItem" class="bullet-row">
+          <view class="bullet-dot"></view>
+          <view class="bullet-text">{{bulletItem.text}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="source-card">
+      <view class="source-title">来源与边界</view>
+      <view wx:for="{{item.sources}}" wx:key="*this" class="source-line">{{item}}</view>
+      <view class="updated-at">更新于 {{item.updatedAt}}</view>
+    </view>
+  </view>
+</view>

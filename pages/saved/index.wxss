@@ -1,0 +1,29 @@
+.saved-list {
+  margin-top: 30rpx;
+}
+
+.result-meta {
+  margin-bottom: 18rpx;
+  color: #898B84;
+  font-size: 23rpx;
+}
+
+.empty-title {
+  color: #383D38;
+  font-size: 32rpx;
+  font-weight: 750;
+}
+
+.empty-copy {
+  margin-top: 14rpx;
+}
+
+.home-button {
+  width: 220rpx;
+  height: 74rpx;
+  margin-top: 28rpx;
+  border-radius: 999rpx;
+  background: #1F5D50;
+  color: #FFFFFF;
+  font-size: 24rpx;
+}

@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/eat/index",
+    "pages/goods/index",
+    "pages/guides/index",
+    "pages/saved/index",
+    "pages/detail/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#F7F4ED",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "一人生活手册",
+    "backgroundColor": "#F7F4ED",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#7A7A72",
+    "selectedColor": "#1F5D50",
+    "backgroundColor": "#FFFEFA",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/eat/index",
+        "text": "一人食"
+      },
+      {
+        "pagePath": "pages/goods/index",
+        "text": "一人用"
+      },
+      {
+        "pagePath": "pages/guides/index",
+        "text": "怎么办"
+      },
+      {
+        "pagePath": "pages/saved/index",
+        "text": "收藏"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

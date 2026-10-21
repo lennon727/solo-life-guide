@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "一人食",
+  "usingComponents": {
+    "content-browser": "/components/content-browser/index"
+  }
+}

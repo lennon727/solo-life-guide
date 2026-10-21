@@ -1,0 +1,79 @@
+<view class="page-shell home-page">
+  <view class="brand-line">
+    <view class="brand-mark">1P</view>
+    <view>
+      <view class="brand-name">一人生活手册</view>
+      <view class="brand-note">一个人，也能把生活安排好</view>
+    </view>
+  </view>
+
+  <view class="hero-title">今天想解决<br />什么生活问题？</view>
+  <view class="hero-subtitle">搜吃什么、买什么，或者遇事怎么办。</view>
+
+  <view class="hero-search">
+    <input
+      class="hero-input"
+      value="{{query}}"
+      placeholder="例如：搬家、电饭煲、10分钟晚餐"
+      placeholder-class="search-placeholder"
+      confirm-type="search"
+      bindinput="onQueryInput"
+      bindconfirm="submitSearch"
+    />
+    <button class="search-button" bindtap="submitSearch">搜索</button>
+  </view>
+
+  <view wx:if="{{searching}}" class="search-results">
+    <view class="result-heading">
+      <view class="section-title">“{{query}}”的结果</view>
+      <text class="clear-link" bindtap="clearSearch">返回首页</text>
+    </view>
+    <content-card wx:for="{{searchResults}}" wx:key="id" item="{{item}}" />
+    <view wx:if="{{!searchResults.length}}" class="empty-state">
+      暂时没有找到。试试“租房”“清洁”“电饭煲”或“出差”。
+    </view>
+  </view>
+
+  <block wx:else>
+    <view class="category-grid">
+      <view class="category-card category-card--food" data-type="food" bindtap="openCategory">
+        <view class="category-index">01</view>
+        <view class="category-name">一人食</view>
+        <view class="category-desc">分量、时间和少浪费</view>
+        <view class="category-count">{{categoryCounts.food}} 条建议</view>
+      </view>
+      <view class="category-card category-card--goods" data-type="goods" bindtap="openCategory">
+        <view class="category-index">02</view>
+        <view class="category-name">一人用</view>
+        <view class="category-desc">值得买，也说清不值得</view>
+        <view class="category-count">{{categoryCounts.goods}} 条建议</view>
+      </view>
+      <view class="category-card category-card--guide" data-type="guide" bindtap="openCategory">
+        <view class="category-index">03</view>
+        <view class="category-name">一人办事</view>
+        <view class="category-desc">没人提醒时的行动清单</view>
+        <view class="category-count">{{categoryCounts.guide}} 条建议</view>
+      </view>
+    </view>
+
+    <view class="section-title">先从这些开始</view>
+    <scroll-view class="featured-scroll" scroll-x enhanced show-scrollbar="{{false}}">
+      <view class="featured-row">
+        <content-card
+          wx:for="{{featured}}"
+          wx:key="id"
+          item="{{item}}"
+          compact="{{true}}"
+        />
+      </view>
+    </scroll-view>
+
+    <view class="editorial-card">
+      <view class="editorial-kicker">我们的推荐原则</view>
+      <view class="editorial-title">不把“迷你”当答案，不把广告当结论</view>
+      <view class="editorial-body">
+        每条建议都说明适合谁、不适合谁、有没有更简单的替代方案，并标记更新时间。
+      </view>
+    </view>
+  </block>
+</view>

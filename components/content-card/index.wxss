@@ -1,0 +1,81 @@
+.content-card {
+  margin-bottom: 22rpx;
+  padding: 28rpx;
+  border: 1rpx solid rgba(39, 45, 39, 0.07);
+  border-radius: 26rpx;
+  background: #FFFEFA;
+  box-shadow: 0 10rpx 30rpx rgba(47, 48, 40, 0.05);
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+
+.content-card--pressed {
+  opacity: 0.82;
+  transform: scale(0.988);
+}
+
+.content-card--compact {
+  min-width: 560rpx;
+  margin-right: 20rpx;
+  margin-bottom: 0;
+}
+
+.card-topline,
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.type-pill {
+  padding: 7rpx 16rpx;
+  border-radius: 999rpx;
+  font-size: 21rpx;
+  font-weight: 700;
+}
+
+.fit-score {
+  color: #85877F;
+  font-size: 22rpx;
+}
+
+.card-title {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.card-summary {
+  margin-top: 12rpx;
+  color: #6A6D66;
+  font-size: 26rpx;
+  line-height: 1.65;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 18rpx;
+}
+
+.tag {
+  margin: 0 12rpx 10rpx 0;
+  padding: 7rpx 14rpx;
+  border-radius: 10rpx;
+  background: #F3F0E9;
+  color: #6B6A63;
+  font-size: 21rpx;
+}
+
+.card-footer {
+  margin-top: 16rpx;
+  padding-top: 18rpx;
+  border-top: 1rpx solid #EFECE5;
+  color: #92938D;
+  font-size: 22rpx;
+}
+
+.read-more {
+  color: #1F5D50;
+  font-weight: 650;
+}

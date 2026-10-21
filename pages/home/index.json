@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "一人生活手册",
+  "usingComponents": {
+    "content-card": "/components/content-card/index"
+  }
+}
